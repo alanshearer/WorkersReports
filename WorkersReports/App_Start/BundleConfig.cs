@@ -13,8 +13,8 @@ namespace WorkersReports
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
                         "~/Scripts/angular.min.js",
-                        "~/Scripts/app.js",
-                        "~/Scripts/controller.js"));
+                        "~/Scripts/App/app.js",
+                        "~/Scripts/App/controller.js"));
 
             // Utilizzare la versione di sviluppo di Modernizr per eseguire attività di sviluppo e formazione. Successivamente, quando si è
             // pronti per passare alla produzione, utilizzare lo strumento di compilazione disponibile all'indirizzo http://modernizr.com per selezionare solo i test necessari.

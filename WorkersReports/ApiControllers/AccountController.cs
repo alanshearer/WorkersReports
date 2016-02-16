@@ -17,7 +17,7 @@ using WorkersReports.Models;
 using WorkersReports.Providers;
 using WorkersReports.Results;
 
-namespace WorkersReports.Controllers
+namespace WorkersReports.ApiControllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
