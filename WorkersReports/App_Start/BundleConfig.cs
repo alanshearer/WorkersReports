@@ -11,6 +11,13 @@ namespace WorkersReports
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                        "~/Scripts/jquery-ui.min.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/jqueryuicss").Include(
+                        "~/Scripts/jquery-ui.min.css",
+                        "~/Scripts/jquery-ui.theme.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
                         "~/Scripts/angular.min.js",
                         "~/Scripts/App/app.js",

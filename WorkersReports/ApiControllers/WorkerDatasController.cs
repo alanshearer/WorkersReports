@@ -17,7 +17,7 @@ namespace WorkersReports.ApiControllers
         private WorkersReportsContext db = new WorkersReportsContext();
 
         // GET api/WorkerData
-        public IQueryable<WorkerData> GetWorkerDatas()
+        public IQueryable<WorkerData> GetWorkerDatas(WorkerDataSearchParameter parameter)
         {
             return db.WorkerDatas;
         }

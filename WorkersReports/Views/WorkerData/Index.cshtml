@@ -6,13 +6,10 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.MACAddress)
+            @Html.DisplayNameFor(model => model.PersonalData.MACAddress)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Time)
@@ -23,13 +20,16 @@
         <th>
             @Html.DisplayNameFor(model => model.Longitude)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipology)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.MACAddress)
+            @Html.DisplayFor(modelItem => item.PersonalData.MACAddress)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Time)
@@ -39,6 +39,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Longitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipology)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

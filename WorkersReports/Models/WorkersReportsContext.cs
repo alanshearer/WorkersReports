@@ -20,6 +20,7 @@ namespace WorkersReports.Models
         }
 
         public System.Data.Entity.DbSet<WorkersReports.Models.WorkerData> WorkerDatas { get; set; }
-    
+
+        public System.Data.Entity.DbSet<WorkersReports.Models.PersonalData> PersonalDatas { get; set; }
     }
 }
