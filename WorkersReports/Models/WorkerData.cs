@@ -7,7 +7,8 @@ using System.Web;
 namespace WorkersReports.Models
 {
     public class WorkerData
-    {   [Key]
+    {
+        [Key]
         public int ID { get; set; }
         public String MACAddress { get; set; }
         public DateTime Time { get; set; }
