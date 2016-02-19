@@ -5,50 +5,50 @@
 }
 
 <h2>Index</h2>
+<div ng-app="WorkerDataApp">
+    <table class="table" ng-controller="GetWorkerDataController">
+        <tr>
+            <th>
+                Dipendente
+            </th>
+            <th>
+                Ora
+            </th>
+            <th>
+                Posizione
+            </th>
+            <th>
+                Tipologia
+            </th>
+            <th></th>
+        </tr>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PersonalData.MACAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Time)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Latitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Longitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipology)
-        </th>
-        <th></th>
-    </tr>
+        <tr ng-repeat="workerdata in workerdatas">
+            <td>
+                {{workerdata.PersonalData.FirstName}} {{workerdata.PersonalData.LastName}}
+            </td>
+            <td>
+                {{workerdata.Time}}
+            </td>
+            <td>
+                {{workerdata.Latitude}},{{workerdata.Longitude}}
+            </td>
+            <td>
+                {{workerdata.Tipology}}
+            </td>
+            <td>
+            </td>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PersonalData.MACAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Time)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Latitude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Longitude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipology)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+    </table>
+</div>
 
-</table>
+<script type="text/javascript">
+    WorkerDataApp.controller('GetWorkerDataController', function ($scope, $http) {
+        $http.get('/Api/WorkerDatas')
+            .success(function (data, status, headers, config) {
+                $scope.workerdatas = data;
+            })
+            .error(function () { });
+    });
+</script>

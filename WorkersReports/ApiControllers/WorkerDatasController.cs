@@ -19,7 +19,10 @@ namespace WorkersReports.ApiControllers
         // GET api/WorkerData
         public IQueryable<WorkerData> GetWorkerDatas(WorkerDataSearchParameter parameter)
         {
-            return db.WorkerDatas;
+            List<WorkerData> wd = db.WorkerDatas.ToList();
+            List<PersonalData> pd = db.PersonalDatas.ToList();
+            wd.ForEach(w => w.PersonalData = pd.Find(p => p.ID == w.PersonalDataId));
+            return wd.AsQueryable();
         }
 
         // GET api/WorkerData/5
@@ -27,6 +30,7 @@ namespace WorkersReports.ApiControllers
         public IHttpActionResult GetWorkerData(int id)
         {
             WorkerData workerdata = db.WorkerDatas.Find(id);
+            
             if (workerdata == null)
             {
                 return NotFound();
