@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">Invia la tua posizione</string>
+  <string name="EntrySendButton">Invia la tua posizione di ingresso</string>
+  <string name="ExitSendButton">Invia la tua posizione di uscita</string>
+  <string name="InfoSendButton">Invia le info del tuo telefono</string>
+</resources>
